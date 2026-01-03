@@ -1,0 +1,30 @@
+[
+    {
+        "user_id": 1,
+        "email": "jasimbro25@gmail.com",
+        "age": "",
+        "dob": "",
+        "contact": ""
+    },
+    {
+        "user_id": 3,
+        "email": "mohamedjasim.work@gmail.com",
+        "age": "",
+        "dob": "",
+        "contact": ""
+    },
+    {
+        "user_id": 6,
+        "email": "creativedigital@gmail.com",
+        "age": "25",
+        "dob": "2026-01-03",
+        "contact": "8248205138"
+    },
+    {
+        "user_id": 8,
+        "email": "Jasimbro25@outlook.com",
+        "age": "",
+        "dob": "",
+        "contact": ""
+    }
+]

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUVI Internship Project - Setup Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">GUVI Internship Project</h1>
+        <p class="hero-subtitle">Complete Setup & Execution Guide</p>
+        <div class="hero-description">
+          A comprehensive walkthrough for building a full-stack application with PHP, MySQL, MongoDB, and Redis using
+          Docker containers.
+          <br><br>
+          This document explains how the project was created from scratch, including all tools, installations, Docker
+          setup, database creation, and verification.
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="tech-stack">
+          <div class="tech-item">PHP</div>
+          <div class="tech-item">MySQL</div>
+          <div class="tech-item">MongoDB</div>
+          <div class="tech-item">Redis</div>
+          <div class="tech-item">Docker</div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="table-of-contents">
+      <h2>Quick Navigation</h2>
+      <div class="toc-grid">
+        <a href="#tools" class="toc-item">
+          <span class="toc-number">01</span>
+          <span class="toc-title">Tools Setup</span>
+        </a>
+        <a href="#docker" class="toc-item">
+          <span class="toc-number">02</span>
+          <span class="toc-title">Docker Installation</span>
+        </a>
+        <a href="#databases" class="toc-item">
+          <span class="toc-number">03</span>
+          <span class="toc-title">Database Setup</span>
+        </a>
+        <a href="#php" class="toc-item">
+          <span class="toc-number">04</span>
+          <span class="toc-title">PHP Configuration</span>
+        </a>
+        <a href="#verification" class="toc-item">
+          <span class="toc-number">05</span>
+          <span class="toc-title">Testing & Verification</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="content">
+      <section id="tools" class="step-section">
+        <div class="step-header">
+          <span class="step-number">01</span>
+          <h2>Development Tools</h2>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-category">
+            <h3>Development Environment</h3>
+            <div class="tool-list">
+              <div class="tool-item">
+                <div class="tool-icon">💻</div>
+                <div class="tool-info">
+                  <strong>VS Code</strong>
+                  <span>Primary code editor</span>
+                </div>
+              </div>
+              <div class="tool-item">
+                <div class="tool-icon">🌐</div>
+                <div class="tool-info">
+                  <strong>Chrome Browser</strong>
+                  <span>UI testing and debugging</span>
+                </div>
+              </div>
+              <div class="tool-item">
+                <div class="tool-icon">⚡</div>
+                <div class="tool-info">
+                  <strong>PowerShell</strong>
+                  <span>Command execution</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <h3>Backend & Containers</h3>
+            <div class="tool-list">
+              <div class="tool-item">
+                <div class="tool-icon">🐘</div>
+                <div class="tool-info">
+                  <strong>PHP 8.x</strong>
+                  <span>Server-side runtime</span>
+                </div>
+              </div>
+              <div class="tool-item">
+                <div class="tool-icon">🐳</div>
+                <div class="tool-info">
+                  <strong>Docker Desktop</strong>
+                  <span>Container management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <h3>Database Systems</h3>
+            <div class="tool-list">
+              <div class="tool-item">
+                <div class="tool-icon">🗄️</div>
+                <div class="tool-info">
+                  <strong>MySQL 8.0</strong>
+                  <span>Authentication data</span>
+                </div>
+              </div>
+              <div class="tool-item">
+                <div class="tool-icon">🍃</div>
+                <div class="tool-info">
+                  <strong>MongoDB</strong>
+                  <span>Profile data storage</span>
+                </div>
+              </div>
+              <div class="tool-item">
+                <div class="tool-icon">⚡</div>
+                <div class="tool-info">
+                  <strong>Redis</strong>
+                  <span>Session management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="docker" class="step-section">
+        <div class="step-header">
+          <span class="step-number">02</span>
+          <h2>Docker Desktop Installation</h2>
+        </div>
+
+        <div class="installation-steps">
+          <div class="install-step">
+            <div class="step-icon">📥</div>
+            <div class="step-content">
+              <h3>Download Docker Desktop</h3>
+              <p>Get Docker Desktop for Windows from the official website</p>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-icon">⚙️</div>
+            <div class="step-content">
+              <h3>Install & Restart</h3>
+              <p>Run the installer and restart your system when prompted</p>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-icon">✅</div>
+            <div class="step-content">
+              <h3>Verify Installation</h3>
+              <div class="code-block">
+                <code>docker --version</code>
+                <code>docker ps</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <strong>Important:</strong> Docker must be running before proceeding to the next steps.
+        </div>
+      </section>
+
+      <section id="databases" class="step-section">
+        <div class="step-header">
+          <span class="step-number">03</span>
+          <h2>Database Container Setup</h2>
+        </div>
+
+        <div class="database-setup">
+          <div class="db-container">
+            <div class="db-header">
+              <div class="db-icon mysql-icon">🗄️</div>
+              <h3>MySQL Container</h3>
+            </div>
+            <div class="db-content">
+              <p>Authentication and user management</p>
+              <div class="code-block">
+                <div class="code-title">Pull MySQL Image</div>
+                <code>docker pull mysql:8.0</code>
+              </div>
+              <div class="code-block">
+                <div class="code-title">Run Container</div>
+                <code>docker run -d \<br>
+  -p 3307:3306 \<br>
+  --name guvi-mysql \<br>
+  -e MYSQL_ROOT_PASSWORD=root \<br>
+  -e MYSQL_DATABASE=guvi_auth \<br>
+  mysql:8.0</code>
+              </div>
+              <div class="db-info">
+                <span><strong>Port:</strong> 3307 (avoiding conflicts with local MySQL)</span>
+                <span><strong>Database:</strong> guvi_auth</span>
+                <div class="note-box info">
+                  ℹ️ <strong>Note:</strong> Port 3307 is used because the default 3306 is often occupied by a local
+                  MySQL installation.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="db-container">
+            <div class="db-header">
+              <div class="db-icon mongo-icon">🍃</div>
+              <h3>MongoDB Container</h3>
+            </div>
+            <div class="db-content">
+              <p>Profile and document storage</p>
+              <div class="code-block">
+                <div class="code-title">Pull & Run MongoDB</div>
+                <code>docker pull mongo</code>
+                <code>docker run -d -p 27017:27017 --name guvi-mongo mongo</code>
+              </div>
+              <div class="db-info">
+                <span><strong>Port:</strong> 27017</span>
+                <span><strong>Database:</strong> guvi_base</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="db-container">
+            <div class="db-header">
+              <div class="db-icon redis-icon">⚡</div>
+              <h3>Redis Container</h3>
+            </div>
+            <div class="db-content">
+              <p>Session and token caching</p>
+              <div class="code-block">
+                <div class="code-title">Pull & Run Redis</div>
+                <code>docker pull redis</code>
+                <code>docker run -d -p 6379:6379 --name guvi-redis redis</code>
+              </div>
+              <div class="db-info">
+                <span><strong>Port:</strong> 6379</span>
+                <span><strong>Purpose:</strong> Session storage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="verification-box">
+          <h4>Verify All Containers</h4>
+          <div class="code-block">
+            <code>docker ps</code>
+          </div>
+          <p>You should see: <strong>guvi-mysql</strong>, <strong>guvi-mongo</strong>, and <strong>guvi-redis</strong>
+            running</p>
+        </div>
+      </section>
+
+      <section class="step-section">
+        <div class="step-header">
+          <span class="step-number">04</span>
+          <h2>Database Schema Creation</h2>
+        </div>
+
+        <div class="schema-setup">
+          <div class="schema-container">
+            <h3>MySQL Table Setup</h3>
+            <div class="schema-steps">
+              <div class="schema-step">
+                <span class="schema-step-number">1</span>
+                <div class="schema-content">
+                  <h4>Enter MySQL Container</h4>
+                  <div class="code-block">
+                    <code>docker exec -it guvi-mysql mysql -u root -proot</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="schema-step">
+                <span class="schema-step-number">2</span>
+                <div class="schema-content">
+                  <h4>Create Users Table</h4>
+                  <div class="code-block">
+                    <code>USE guvi_auth;</code>
+                    <code>CREATE TABLE users (<br>
+  id INT AUTO_INCREMENT PRIMARY KEY,<br>
+  name VARCHAR(100),<br>
+  email VARCHAR(100) UNIQUE,<br>
+  password VARCHAR(255)<br>
+);</code>
+                  </div>
+                  <div class="verification-substep">
+                    <h5>Verify Table Creation</h5>
+                    <div class="code-block">
+                      <code>SHOW TABLES;</code>
+                      <code>SELECT * FROM users;</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schema-container">
+          <h3>MongoDB Collection Setup</h3>
+          <div class="schema-steps">
+            <div class="schema-step">
+              <span class="schema-step-number">1</span>
+              <div class="schema-content">
+                <h4>Enter MongoDB Shell</h4>
+                <div class="code-block">
+                  <code>docker exec -it guvi-mongo mongosh</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="schema-step">
+              <span class="schema-step-number">2</span>
+              <div class="schema-content">
+                <h4>Create Database & Collection</h4>
+                <div class="code-block">
+                  <code>use guvi_base</code>
+                  <code>db.guvi_users.insertOne({ test: "ok" })</code>
+                </div>
+                <div class="note-box success">
+                  🍃 <strong>Auto-Creation:</strong> MongoDB automatically creates the database <code>guvi_base</code>
+                  and collection <code>guvi_users</code> upon the first insert.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="php" class="step-section">
+    <div class="step-header">
+      <span class="step-number">05</span>
+      <h2>PHP Environment Setup</h2>
+    </div>
+
+    <div class="php-setup">
+      <div class="php-step">
+        <h3>Install PHP Locally</h3>
+        <div class="php-instructions">
+          <div class="instruction-item">
+            <span class="instruction-number">1</span>
+            <div class="instruction-content">
+              <strong>Download PHP 8.x</strong>
+              <p>Get the ZIP version for Windows and extract to <code>C:\php</code></p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <span class="instruction-number">2</span>
+            <div class="instruction-content">
+              <strong>Add to PATH</strong>
+              <p>Environment Variables → PATH → add <code>C:\php</code></p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <span class="instruction-number">3</span>
+            <div class="instruction-content">
+              <strong>Verify Installation</strong>
+              <div class="code-block">
+                <code>php -v</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="php-step">
+        <h3>Configure MongoDB Extension</h3>
+        <div class="extension-setup">
+          <div class="extension-item">
+            <div class="extension-icon">📦</div>
+            <div class="extension-content">
+              <strong>Download Extension</strong>
+              <p>Get MongoDB PHP extension (.dll file)</p>
+            </div>
+          </div>
+
+          <div class="extension-item">
+            <div class="extension-icon">📁</div>
+            <div class="extension-content">
+              <strong>Install Extension</strong>
+              <p>Copy .dll to PHP ext folder, add <code>extension=mongodb</code> to php.ini</p>
+              <p class="small-note">⚠️ Don't forget to restart your terminal/server after this change.</p>
+            </div>
+          </div>
+
+          <div class="extension-item">
+            <div class="extension-icon">✅</div>
+            <div class="extension-content">
+              <strong>Verify</strong>
+              <div class="code-block">
+                <code>php -m | grep mongodb</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="php-step">
+        <h3>Install Dependencies</h3>
+        <div class="dependencies">
+          <div class="dependency-item">
+            <h4>Composer Installation</h4>
+            <div class="code-block">
+              <code>composer --version</code>
+            </div>
+          </div>
+
+          <div class="dependency-item">
+            <h4>MongoDB PHP Library</h4>
+            <div class="code-block">
+              <code>composer require mongodb/mongodb</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step-section">
+    <div class="step-header">
+      <span class="step-number">06</span>
+      <h2>Project Structure</h2>
+    </div>
+
+    <div class="project-structure">
+      <div class="file-tree">
+        <div class="tree-item folder">
+          <span class="tree-icon">📁</span>
+          <span class="tree-name">guvi-internship/</span>
+        </div>
+        <div class="tree-children">
+          <div class="tree-item file">
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">register.html</span>
+          </div>
+          <div class="tree-item file">
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">login.html</span>
+          </div>
+          <div class="tree-item file">
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">profile.html</span>
+          </div>
+          <div class="tree-item folder">
+            <span class="tree-icon">📁</span>
+            <span class="tree-name">assets/</span>
+          </div>
+          <div class="tree-children nested">
+            <div class="tree-item folder">
+              <span class="tree-icon">📁</span>
+              <span class="tree-name">css/</span>
+            </div>
+            <div class="tree-item folder">
+              <span class="tree-icon">📁</span>
+              <span class="tree-name">js/</span>
+            </div>
+            <div class="tree-item folder">
+              <span class="tree-icon">📁</span>
+              <span class="tree-name">php/</span>
+            </div>
+          </div>
+          <div class="tree-item folder">
+            <span class="tree-icon">📁</span>
+            <span class="tree-name">vendor/</span>
+            <span class="tree-note">(composer dependencies)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step-section">
+    <div class="step-header">
+      <span class="step-number">07</span>
+      <h2>Launch Application</h2>
+    </div>
+
+    <div class="launch-section">
+      <div class="launch-step">
+        <div class="launch-icon">🚀</div>
+        <div class="launch-content">
+          <h3>Start PHP Development Server</h3>
+          <div class="code-block">
+            <code>php -S localhost:8000</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="launch-step">
+        <div class="launch-icon">🌐</div>
+        <div class="launch-content">
+          <h3>Access Application</h3>
+          <div class="url-box">
+            <a href="http://localhost:8000/register.html" target="_blank">
+              http://localhost:8000/register.html
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="application-flow">
+        <h3>Application Workflow</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <span class="flow-number">1</span>
+            <span class="flow-text">Register new user</span>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <span class="flow-number">2</span>
+            <span class="flow-text">Login with credentials</span>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <span class="flow-number">3</span>
+            <span class="flow-text">Add profile details</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="verification" class="step-section">
+    <div class="step-header">
+      <span class="step-number">08</span>
+      <h2>Database Verification</h2>
+    </div>
+
+    <div class="verification-tools">
+      <div class="verification-tool">
+        <div class="tool-header">
+          <div class="tool-logo mysql-logo">1</div>
+          <h3>MySQL Verification</h3>
+          <span class="tool-name">DBeaver</span>
+        </div>
+        <div class="tool-content">
+          <p class="instruction-lead"><strong>1. Open DBeaver</strong> and select <strong>New Connection â†’
+              MySQL</strong></p>
+          <div class="connection-details">
+            <div class="detail-item">
+              <strong>Host:</strong> localhost
+            </div>
+            <div class="detail-item">
+              <strong>Port:</strong> 3307
+            </div>
+            <div class="detail-item">
+              <strong>User:</strong> root
+            </div>
+            <div class="detail-item">
+              <strong>Password:</strong> root
+            </div>
+          </div>
+          <p>Navigate to: <code>guvi_auth → users</code></p>
+        </div>
+      </div>
+
+      <div class="verification-tool">
+        <div class="tool-header">
+          <div class="tool-logo mongo-logo">🍃</div>
+          <h3>MongoDB Verification</h3>
+          <span class="tool-name">MongoDB Compass</span>
+        </div>
+        <div class="tool-content">
+          <p class="instruction-lead"><strong>1. Open MongoDB Compass</strong></p>
+          <div class="connection-details">
+            <div class="detail-item">
+              <strong>Connection String:</strong>
+              <code>mongodb://localhost:27017</code>
+            </div>
+          </div>
+          <p>Navigate to: <code>guvi_base → guvi_users</code></p>
+        </div>
+      </div>
+
+      <div class="verification-tool">
+        <div class="tool-header">
+          <div class="tool-logo redis-logo">⚡</div>
+          <h3>Redis Verification</h3>
+          <span class="tool-name">Redis CLI</span>
+        </div>
+        <div class="tool-content">
+          <div class="code-block">
+            <code>docker exec -it guvi-redis redis-cli</code>
+            <code>KEYS *</code>
+          </div>
+          <p>View stored session tokens and cache data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-result">
+    <div class="result-header">
+      <h2>🎉 Project Complete!</h2>
+      <p>Your full-stack application is now ready with multi-database architecture</p>
+    </div>
+
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-icon mysql-icon">🗄️</div>
+        <div class="result-content">
+          <h3>MySQL</h3>
+          <p>User authentication data securely stored</p>
+        </div>
+      </div>
+
+      <div class="result-item">
+        <div class="result-icon mongo-icon">🍃</div>
+        <div class="result-content">
+          <h3>MongoDB</h3>
+          <p>Profile data and documents managed</p>
+        </div>
+      </div>
+
+      <div class="result-item">
+        <div class="result-icon redis-icon">⚡</div>
+        <div class="result-content">
+          <h3>Redis</h3>
+          <p>Session tokens and cache optimized</p>
+        </div>
+      </div>
+
+      <div class="result-item">
+        <div class="result-icon">✅</div>
+        <div class="result-content">
+          <h3>Verified</h3>
+          <p>All systems tested with professional tools</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 GUVI Internship Project. Built with PHP, Docker, and modern web technologies.</p>
+      <div class="footer-links">
+        <a href="#tools">Tools</a>
+        <a href="#docker">Docker</a>
+        <a href="#databases">Databases</a>
+        <a href="#php">PHP</a>
+        <a href="#verification">Verification</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
